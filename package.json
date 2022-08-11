@@ -1,0 +1,44 @@
+{
+	"name": "vkbansal.me",
+	"version": "0.1.0",
+	"description": "Site for Vivek Kumar Bansal",
+	"type": "module",
+	"private": true,
+	"author": "Vivek Kumar Bansal <contact@vkbansal.me>",
+	"license": "MIT",
+	"scripts": {
+		"prepare": "husky install",
+		"lint": "eslint 'src/**/*.{ts,tsx,astro}'",
+		"fmt": "prettier --plugin-search-dir=. --write 'src/**/*.{ts,tsx}'",
+		"fmtc": "prettier --plugin-search-dir=. --check 'src/**/*.{ts,tsx}'",
+		"typecheck": "astro check && tsc --noEmit",
+		"dev": "vite",
+		"start": "vite",
+		"prebuild": "rm -rf public",
+		"build": "NODE_ENV=production vite build"
+	},
+	"dependencies": {
+		"@chakra-ui/react": "^2.2.6",
+		"@chakra-ui/styled-system": "^2.2.5",
+		"@emotion/react": "^11.10.0",
+		"@emotion/styled": "^11.10.0",
+		"date-fns": "^2.29.1",
+		"framer-motion": "^7.1.0",
+		"mongodb": "^4.8.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@netlify/functions": "^1.0.0",
+		"@types/node": "^18.6.5",
+		"@typescript-eslint/eslint-plugin": "^5.33.0",
+		"@typescript-eslint/parser": "^5.33.0",
+		"eslint": "^8.21.0",
+		"eslint-config-prettier": "^8.5.0",
+		"husky": "^8.0.1",
+		"prettier": "^2.7.1",
+		"typescript": "^4.7.4",
+		"vite": "^3.0.5",
+		"vite-tsconfig-paths": "^3.5.0"
+	}
+}

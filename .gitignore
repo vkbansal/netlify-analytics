@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+node_modules_*/
+.deploy*/
+public/*
+public_1/*
+.env
+.vscode/
+scripts/_*.json
+scripts/_*.js
+temp/
+.netlify
+.hashes.json
