@@ -7,7 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 const CERTS_DIR = path.resolve(process.cwd(), './.certificates');
 
 export default defineConfig({
-	root: path.resolve(__dirname, 'src'),
+	root: path.resolve(process.cwd(), 'src'),
 	server: {
 		https: fs.existsSync(CERTS_DIR)
 			? {
@@ -27,7 +27,7 @@ export default defineConfig({
 		// },
 	},
 	build: {
-		outDir: 'public',
+		outDir: path.resolve(process.cwd(), 'public'),
 	},
 	plugins: [
 		tsconfigPaths({
