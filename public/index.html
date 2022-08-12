@@ -29,7 +29,7 @@
 
 			document.addEventListener('alpine:init', () => {
 				Alpine.data('analytics', () => ({
-					currentUser: netlifyIdentity.currentUser(),
+					currentUser: !!netlifyIdentity.currentUser(),
 					login() {
 						netlifyIdentity.open();
 					},
