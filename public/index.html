@@ -1,0 +1,40 @@
+<html data-theme="light" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Analytics</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Work+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+	</head>
+	<body>
+		<div x-data="analytics">
+			<template x-if="currentUser">Hello</template>
+			<template x-if="!currentUser">
+				<button @click="login">Login</button>
+			</template>
+		</div>
+		<script
+			type="text/javascript"
+			src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+		></script>
+		<script type="text/javascript">
+			netlifyIdentity.init({
+				APIUrl: 'https://analytics.vkbansal.me/.netlify/identity',
+				logo: false,
+			});
+
+			document.addEventListener('alpine:init', () => {
+				Alpine.data('analytics', () => ({
+					currentUser: netlifyIdentity.currentUser(),
+					login() {
+						netlifyIdentity.open();
+					},
+				}));
+			});
+		</script>
+	</body>
+</html>

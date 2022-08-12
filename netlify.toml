@@ -6,6 +6,5 @@
   NPM_FLAGS="--version"
   NODE_VERSION="16"
 
-# [functions]
-#   directory = "src/functions"
-#   external_node_modules = ["mongodb"]
+[functions]
+  directory = "functions"
